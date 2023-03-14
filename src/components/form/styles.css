@@ -86,3 +86,21 @@ form {
   margin: 0 0 24px 0;
   border-bottom: thin solid #bebebe;
 }
+
+@media (max-width: 576px) {
+  .name,
+  .select-group {
+    display: block;
+  }
+
+  .select-country,
+  .select-state,
+  .input-zip {
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+
+  .select {
+    width: 100%;
+  }
+}
