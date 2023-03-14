@@ -1,0 +1,80 @@
+form {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.input {
+  font-size: 16px;
+  line-height: 1.5;
+  width: calc(100% - 30px);
+  padding: 6px 12px;
+  margin: 6px 0 0 0;
+  border: thin solid #dee2e6;
+  border-radius: 6px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.select-group {
+  display: flex;
+}
+
+.select-country {
+  width: 45%;
+  margin: 0;
+}
+
+.select-state {
+  width: 40%;
+  margin: 0;
+}
+
+.input-zip {
+  width: 30%;
+  margin: 0;
+}
+
+.check-group {
+  text-align: start;
+}
+
+#shipping,
+#save-info {
+  margin: 0 8px 0 0;
+}
+
+.btn {
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 8px 16px;
+  width: 100%;
+  color: white;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.muted-text {
+  color: #6d6d6d;
+}
+
+.border-bottom {
+  padding: 0 0 24px 0;
+  margin: 0 0 24px 0;
+  border-bottom: thin solid #bebebe;
+}
