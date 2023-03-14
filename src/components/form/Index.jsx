@@ -8,11 +8,11 @@ export default function Form() {
         <div className="name">
           <div className="input-group">
             <label htmlFor="first-name">First name</label>
-            <input id="first-name" className="input" type="text" />
+            <input id="first-name" className="input" type="text" required />
           </div>
           <div className="input-group">
             <label htmlFor="last-name">Last name</label>
-            <input id="last-name" className="input" type="text" />
+            <input id="last-name" className="input" type="text" required />
           </div>
         </div>
 
@@ -23,6 +23,7 @@ export default function Form() {
             className="input"
             type="text"
             placeholder="Username"
+            required
           />
         </div>
 
@@ -35,6 +36,7 @@ export default function Form() {
             className="input"
             type="email"
             placeholder="you@example.com"
+            required
           />
         </div>
 
@@ -45,6 +47,7 @@ export default function Form() {
             className="input"
             type="text"
             placeholder="1234 Main St"
+            required
           />
         </div>
 
@@ -63,21 +66,26 @@ export default function Form() {
         <div className="select-group border-bottom">
           <div className="input-group  select-country">
             <label htmlFor="country">Country</label>
-            <select name="country" id="country" className="input">
+            <select
+              name="country"
+              id="country"
+              className="input select"
+              required
+            >
               <option value="choose">Choose...</option>
               <option value="us">United States</option>
             </select>
           </div>
           <div className="input-group select-state">
             <label htmlFor="state">State</label>
-            <select name="state" id="state" className="input">
+            <select name="state" id="state" className="input select" required>
               <option value="choose">Choose...</option>
               <option value="california">California</option>
             </select>
           </div>
           <div className="input-group input-zip">
             <label htmlFor="zip">Zip</label>
-            <input id="zip" className="input" type="text" />
+            <input id="zip" className="input" type="text" required />
           </div>
         </div>
 
