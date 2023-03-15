@@ -1,6 +1,7 @@
 import "./styles.css";
 import { Link, useParams } from "react-router-dom";
 import { data } from "../../data/data";
+import ErrorPage from "../error/Index";
 
 const getBillingAddress = (id) => data.find((item) => item.id === +id)
 
@@ -8,6 +9,8 @@ export default function BillingAddress() {
   const params = useParams();
 
   const billingAddress = getBillingAddress(params.id);
+
+  if (!billingAddress) return <ErrorPage />;
   return (
     <>
       <div className="billingInfo">
