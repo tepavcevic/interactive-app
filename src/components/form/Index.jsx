@@ -1,20 +1,72 @@
+import { useState } from "react";
 import "./styles.css";
 
 export default function Form({ formOpened }) {
+  const [billingAddress, setBillingAddress] = useState({
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    address: "",
+    secondAddress: "",
+    country: "",
+    cityState: "",
+    zip: "",
+    shipping: false,
+    saveInfo: false,
+  });
+
+  const handleBillingAddressChanged = (event) => {
+    const { name, value } = event.target;
+    setBillingAddress({
+      ...billingAddress,
+      [name]: value,
+    });
+  }
+
+  const handleBillingAddressChecked = (event) => {
+    const { name, checked } = event.target;
+    setBillingAddress({
+      ...billingAddress,
+      [name]: checked,
+    });
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
+
   return (
     <>
       {formOpened && (
         <>
           <h3>Billing address</h3>
-          <form action="">
+          {JSON.stringify(billingAddress)}
+          <form action="" onSubmit={handleSubmit}>
             <div className="name">
               <div className="input-group">
-                <label htmlFor="first-name">First name</label>
-                <input id="first-name" className="input" type="text" required />
+                <label htmlFor="firstName">First name</label>
+                <input 
+                  id="firstName" 
+                  className="input" 
+                  type="text"
+                  name="firstName" 
+                  value={billingAddress.firstName} 
+                  onChange={(event) => handleBillingAddressChanged(event)} 
+                  required 
+                />
               </div>
               <div className="input-group">
-                <label htmlFor="last-name">Last name</label>
-                <input id="last-name" className="input" type="text" required />
+                <label htmlFor="lastName">Last name</label>
+                <input 
+                  id="lastName" 
+                  className="input" 
+                  type="text"
+                  name="lastName"
+                  value={billingAddress.lastName}
+                  onChange={(event) => handleBillingAddressChanged(event)}
+                  required 
+                />
               </div>
             </div>
 
@@ -24,6 +76,9 @@ export default function Form({ formOpened }) {
                 id="username"
                 className="input"
                 type="text"
+                name="username"
+                value={billingAddress.username}
+                onChange={(event) => handleBillingAddressChanged(event)}
                 placeholder="Username"
                 required
               />
@@ -37,6 +92,9 @@ export default function Form({ formOpened }) {
                 id="email"
                 className="input"
                 type="email"
+                name="email"
+                value={billingAddress.email}
+                onChange={(event) => handleBillingAddressChanged(event)}
                 placeholder="you@example.com"
                 required
               />
@@ -48,19 +106,25 @@ export default function Form({ formOpened }) {
                 id="address"
                 className="input"
                 type="text"
+                name="address"
+                value={billingAddress.address}
+                onChange={(event) => handleBillingAddressChanged(event)}
                 placeholder="1234 Main St"
                 required
               />
             </div>
 
             <div className="input-group">
-              <label htmlFor="second-address">
+              <label htmlFor="secondAddress">
                 Address 2 <span className="muted-text">(Optional)</span>
               </label>
               <input
-                id="second-address"
+                id="secondAddress"
                 className="input"
                 type="text"
+                name="secondAddress"
+                value={billingAddress.secondAddress}
+                onChange={(event) => handleBillingAddressChanged(event)}
                 placeholder="Apartment or suite"
               />
             </div>
@@ -69,9 +133,11 @@ export default function Form({ formOpened }) {
               <div className="input-group  select-country">
                 <label htmlFor="country">Country</label>
                 <select
-                  name="country"
                   id="country"
                   className="input select"
+                  name="country"
+                  value={billingAddress.country}
+                  onChange={(event) => handleBillingAddressChanged(event)}
                   required
                 >
                   <option value="choose">Choose...</option>
@@ -79,11 +145,13 @@ export default function Form({ formOpened }) {
                 </select>
               </div>
               <div className="input-group select-state">
-                <label htmlFor="state">State</label>
+                <label htmlFor="cityState">State</label>
                 <select
-                  name="state"
-                  id="state"
+                  id="cityState"
                   className="input select"
+                  name="cityState"
+                  value={billingAddress.cityState}
+                  onChange={(event) => handleBillingAddressChanged(event)}
                   required
                 >
                   <option value="choose">Choose...</option>
@@ -92,20 +160,40 @@ export default function Form({ formOpened }) {
               </div>
               <div className="input-group input-zip">
                 <label htmlFor="zip">Zip</label>
-                <input id="zip" className="input" type="text" required />
+                <input 
+                  id="zip" 
+                  className="input" 
+                  type="text"
+                  name="zip"
+                  value={billingAddress.zip}
+                  onChange={(event) => handleBillingAddressChanged(event)} 
+                  required 
+                />
               </div>
             </div>
 
             <div className="check-group">
-              <input type="checkbox" name="shipping" id="shipping" />
+              <input 
+                id="shipping" 
+                type="checkbox" 
+                name="shipping"
+                checked={billingAddress.shipping}
+                onChange={(event) => handleBillingAddressChecked(event)} 
+              />
               <label htmlFor="shipping">
                 Shipping address is the same as my billing address
               </label>
             </div>
 
             <div className="check-group border-bottom">
-              <input type="checkbox" name="save-info" id="save-info" />
-              <label htmlFor="save-info">
+              <input 
+                id="saveInfo" 
+                type="checkbox" 
+                name="saveInfo"
+                checked={billingAddress.saveInfo}
+                onChange={(event) => handleBillingAddressChecked(event)}
+              />
+              <label htmlFor="saveInfo">
                 Save this information for next time
               </label>
             </div>
