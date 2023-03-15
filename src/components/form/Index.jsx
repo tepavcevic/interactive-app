@@ -44,7 +44,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
       <h3>Billing address</h3>
         <form action="" onSubmit={handleSubmit}>
           <div className="name">
-            <div className="input-group">
+            <div className="inputGroup">
               <label htmlFor="firstName">First name</label>
               <input 
                 id="firstName" 
@@ -56,7 +56,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
                 required 
               />
             </div>
-            <div className="input-group">
+            <div className="inputGroup">
               <label htmlFor="lastName">Last name</label>
               <input 
                 id="lastName" 
@@ -70,7 +70,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
             </div>
           </div>
 
-          <div className="input-group">
+          <div className="inputGroup">
             <label htmlFor="username">Username</label>
             <input
               id="username"
@@ -84,9 +84,9 @@ export default function Form({ onFormToggle, billingAddressList }) {
             />
           </div>
 
-          <div className="input-group">
+          <div className="inputGroup">
             <label htmlFor="email">
-              Email <span className="muted-text">(Optional)</span>
+              Email <span className="mutedText">(Optional)</span>
             </label>
             <input
               id="email"
@@ -100,7 +100,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
             />
           </div>
 
-          <div className="input-group">
+          <div className="inputGroup">
             <label htmlFor="address">Address</label>
             <input
               id="address"
@@ -114,7 +114,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
             />
           </div>
 
-          <div className="input-group">
+          <div className="inputGroup">
             <label htmlFor="secondAddress">
               Address 2 <span className="muted-text">(Optional)</span>
             </label>
@@ -129,8 +129,8 @@ export default function Form({ onFormToggle, billingAddressList }) {
             />
           </div>
 
-          <div className="select-group border-bottom">
-            <div className="input-group  select-country">
+          <div className="selectGroup borderBottom">
+            <div className="inputGroup  selectCountry">
               <label htmlFor="country">Country</label>
               <select
                 id="country"
@@ -144,7 +144,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
                 <option value="us">United States</option>
               </select>
             </div>
-            <div className="input-group select-state">
+            <div className="inputGroup selectState">
               <label htmlFor="cityState">State</label>
               <select
                 id="cityState"
@@ -158,7 +158,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
                 <option value="california">California</option>
               </select>
             </div>
-            <div className="input-group input-zip">
+            <div className="inputGroup inputZip">
               <label htmlFor="zip">Zip</label>
               <input 
                 id="zip" 
@@ -172,7 +172,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
             </div>
           </div>
 
-          <div className="check-group">
+          <div className="checkGroup">
             <input 
               id="shipping" 
               type="checkbox" 
@@ -185,7 +185,7 @@ export default function Form({ onFormToggle, billingAddressList }) {
             </label>
           </div>
 
-          <div className="check-group border-bottom">
+          <div className="checkGroup borderBottom">
             <input 
               id="saveInfo" 
               type="checkbox" 
